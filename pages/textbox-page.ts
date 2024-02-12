@@ -1,7 +1,7 @@
 import { expect, type Locator, type Page } from '@playwright/test';
-import exp from 'constants';
 
-export class TexboxPage {
+export class TexBoxPage {
+  // Define Selectors
   readonly page: Page;
   readonly fullNameField: Locator;
   readonly emailAddressField: Locator;
@@ -9,12 +9,12 @@ export class TexboxPage {
   readonly permanentAddressField: Locator;
   readonly submitButton: Locator;
   readonly formName: Locator;
-  readonly formMail : Locator;
+  readonly formEmail : Locator;
   readonly formCurrentAddress : Locator;
   readonly formPermanentAddress : Locator;
 
-
   constructor(page: Page) {
+    // Initialize selectors using constructor
     this.page = page;
     this.fullNameField = page.locator("#userName");
     this.emailAddressField = page.locator("#userEmail");
@@ -22,11 +22,13 @@ export class TexboxPage {
     this.permanentAddressField = page.locator("#permanentAddress")
     this.submitButton = page.locator("#submit")
     this.formName = page.locator("#name")
-    this.formMail = page.locator("#email")
+    this.formEmail = page.locator("#email")
     this.formCurrentAddress = page.locator("#currentAddress").nth(1)
     this.formPermanentAddress = page.locator("#permanentAddress").nth(1)
   }
 
+
+  // Define Methods
   async visitTextBoxPage() {
     await this.page.goto('https://demoqa.com/text-box');
     await expect(this.page).toHaveTitle(/DEMOQA/)
@@ -43,7 +45,7 @@ export class TexboxPage {
 
   async verifyResponseAfterSubmit(fullName: string, emailAddress: string, currentAddress: string, permanentAddress: string){
     await expect(this.formName).toContainText(fullName)
-    await expect(this.formMail).toContainText(emailAddress)
+    await expect(this.formEmail).toContainText(emailAddress)
     await expect(this.formCurrentAddress).toContainText(currentAddress)
     await expect(this.formPermanentAddress).toContainText(permanentAddress)
   }

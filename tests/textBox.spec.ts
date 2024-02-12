@@ -1,12 +1,19 @@
-import test, { expect } from "@playwright/test";
-import { TexboxPage } from "../pages/textbox-page";
-import exp from "constants";
+import test from "@playwright/test";
+import { TexBoxPage } from "../pages/textbox-page";
+
+
+const testData = {
+    fullName: "John Doe",
+    emailAddress: "test@mailinator.com",
+    currentAddress: "Fake Street 123, MN",
+    permanentAddress: "New Street 66"
+  };
 
 test("Submit a Text Box Form", async ({page}) => {
-    const textboxPage = new TexboxPage(page)
+    const textboxPage = new TexBoxPage(page)
     await textboxPage.visitTextBoxPage()
-    await textboxPage.submitTextBox("John Doe", "test@mailinator.com", "Fake Street 123, MN", "New Street 66")
-    await textboxPage.verifyResponseAfterSubmit("John Doe", "test@mailinator.com", "Fake Street 123, MN", "New Street 66")
+    await textboxPage.submitTextBox(testData.fullName, testData.emailAddress, testData.currentAddress, testData.permanentAddress)
+    await textboxPage.verifyResponseAfterSubmit(testData.fullName, testData.emailAddress, testData.currentAddress, testData.permanentAddress)
 });
 
 
