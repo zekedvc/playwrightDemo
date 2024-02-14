@@ -5,6 +5,7 @@ export class RadioPage{
     readonly questionLocator: Locator;
     readonly yesRadio: Locator;
     readonly impressiveRadio: Locator;
+    readonly selectionYesMessage: Locator;
 
 
     constructor(page: Page){
@@ -12,6 +13,7 @@ export class RadioPage{
         this.questionLocator = page.locator(".mb-3")
         this.yesRadio = page.locator('[for="yesRadio"]');
         this.impressiveRadio = page.locator("[for='impressiveRadio']")
+        this.selectionYesMessage = page.locator(".text-success")
     }
 
 
@@ -26,6 +28,10 @@ export class RadioPage{
 
     async clickImpressiveRadioButton(){
         await this.impressiveRadio.click()
+    }
+    
+    async verifySelectionIsYes(){
+        await expect(this.selectionYesMessage).toContainText("Yes")
     }
 
 }
