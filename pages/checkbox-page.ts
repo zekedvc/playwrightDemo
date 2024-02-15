@@ -22,6 +22,7 @@ export class CheckBoxPage {
     this.expandCloseDocumentsButton = page.locator("button[title='Toggle'] > .rct-icon").nth(2)
     this.expandCloseDownloadsButton = page.locator("button[title='Toggle'] > .rct-icon").nth(3)
     this.result = page.locator('id="result"')
+    
   }
 
   // Define Methods

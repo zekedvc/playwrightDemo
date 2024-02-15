@@ -10,6 +10,7 @@ test("Click yes radio page from demoQA", async ({page}) => {
     const radioPage = new RadioPage(page)
     await radioPage.visitRadioPage()
     await radioPage.clickYesRadioButton()
+    await radioPage.verifySelectionIsYes()
 });
 
 test("Click impressive radio page from demoQA", async ({page}) => {
