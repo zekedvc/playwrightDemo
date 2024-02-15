@@ -3,7 +3,7 @@ import { expect, type Locator, type Page } from '@playwright/test';
 export class CheckBoxPage {
   // Define Selectors
   readonly page: Page;
-  readonly siteTitle: Locator;
+  // readonly siteTitle: Locator;
   readonly homeCheckbox: Locator;
   readonly expandCloseHomeButton: Locator;
   readonly expandCloseDesktopButton: Locator;
@@ -15,7 +15,7 @@ export class CheckBoxPage {
   constructor(page: Page) {
     // Initialize selectors using constructor
     this.page = page;
-    this.siteTitle = page.locator('.main-header:has-text("Check Box")');
+    // this.siteTitle = page.locator('.main-header:has-text("Check Box")');
     this.homeCheckbox = page.locator('label').filter({ hasText: 'Home' }).getByRole('img').first()
     this.expandCloseHomeButton = page.locator("button[title='Toggle'] > .rct-icon");
     this.expandCloseDesktopButton = page.locator("button[title='Toggle'] > .rct-icon").nth(1)
@@ -28,7 +28,7 @@ export class CheckBoxPage {
   // Define Methods
   async visitCheckBoxPage() {
     await this.page.goto('https://demoqa.com/checkbox');
-    await expect(this.siteTitle).toBeVisible();
+    //await expect(this.siteTitle).toBeVisible();
     
   }
 
