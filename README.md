@@ -42,7 +42,5 @@ Contributions are welcome! If you find any bugs or want to add more tests, feel 
 
 - [Playwright Documentation](https://playwright.dev/docs/intro): Official documentation for Playwright.
 - [DemoQA](https://demoqa.com/): Website used for testing.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+- Page Object Model (POM) for improved test maintenance.
+- Integration with GitHub Actions for continuous integration.
