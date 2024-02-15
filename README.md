@@ -1,5 +1,8 @@
 # Playwright TypeScript Project
 
+![playwright-logo](https://github.com/zekedvc/playwrightDemo/assets/67669609/4102726f-1b95-42eb-970b-81b7bd8e9a9c)
+
+
 ## Overview
 
 This is a Playwright project written in TypeScript to automate tests for the DemoQA website. It aims to demonstrate various functionalities provided by Playwright for browser automation.
@@ -39,7 +42,5 @@ Contributions are welcome! If you find any bugs or want to add more tests, feel 
 
 - [Playwright Documentation](https://playwright.dev/docs/intro): Official documentation for Playwright.
 - [DemoQA](https://demoqa.com/): Website used for testing.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+- Page Object Model (POM) for improved test maintenance.
+- Integration with GitHub Actions for continuous integration.
