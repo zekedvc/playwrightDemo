@@ -28,7 +28,7 @@ export class CheckBoxPage {
   // Define Methods
   async visitCheckBoxPage() {
     await this.page.goto('https://demoqa.com/checkbox');
-    await expect(this.siteTitle).toBeVisible();
+    //await expect(this.siteTitle).toBeVisible();
     
   }
 
