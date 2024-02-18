@@ -15,6 +15,8 @@ export class WebTablePage {
   readonly salary: Locator;
   readonly department: Locator;
   readonly submitButton: Locator;
+  readonly searchBox: Locator;
+  readonly searchResults: Locator;
 
 
 
@@ -34,6 +36,8 @@ export class WebTablePage {
     this.salary = page.getByPlaceholder('Salary')
     this.department = page.getByPlaceholder('Department')
     this.submitButton = page.getByRole('button', { name: 'Submit' })
+    this.searchBox = page.locator("#searchBox")
+    this.searchResults = page.locator(".rt-table")
     
   }
 
@@ -50,7 +54,6 @@ export class WebTablePage {
   }
 
   async addNewRecord(firstName: string, lastName: string, email: string, age: string, salary: string, department: string){
-    await this.page.goto("https://demoqa.com/webtables")
     await this.addRecordButton.click()  
     await this.firstName.fill(firstName);
     await this.lastName.fill(lastName)
@@ -60,6 +63,12 @@ export class WebTablePage {
     await this.department.fill(department)
     await this.submitButton.click()
   }
+
+  async verifyRecordWasAdded(firstName: string){
+    await this.searchBox.fill(firstName)
+    await expect(this.searchResults).toContainText(firstName)
+  }
+
 }
 
 
