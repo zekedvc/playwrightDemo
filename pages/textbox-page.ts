@@ -1,4 +1,5 @@
 import { expect, type Locator, type Page } from '@playwright/test';
+import { TextBoxLocators } from './locators/textbox-locators';
 
 export class TexBoxPage {
   // Define Selectors
@@ -16,13 +17,13 @@ export class TexBoxPage {
   constructor(page: Page) {
     // Initialize selectors using constructor
     this.page = page;
-    this.fullNameField = page.locator("#userName");
-    this.emailAddressField = page.locator("#userEmail");
-    this.currentAddressField = page.locator("#currentAddress")
-    this.permanentAddressField = page.locator("#permanentAddress")
-    this.submitButton = page.locator("#submit")
-    this.formName = page.locator("#name")
-    this.formEmail = page.locator("#email")
+    this.fullNameField = page.locator(TextBoxLocators.fullNameField);
+    this.emailAddressField = page.locator(TextBoxLocators.emailAddressField);
+    this.currentAddressField = page.locator(TextBoxLocators.currentAddressField)
+    this.permanentAddressField = page.locator(TextBoxLocators.permanentAddressField)
+    this.submitButton = page.locator(TextBoxLocators.submitButton)
+    this.formName = page.locator(TextBoxLocators.formName)
+    this.formEmail = page.locator(TextBoxLocators.formEmail)
     this.formCurrentAddress = page.locator("#currentAddress").nth(1)
     this.formPermanentAddress = page.locator("#permanentAddress").nth(1)
   }
