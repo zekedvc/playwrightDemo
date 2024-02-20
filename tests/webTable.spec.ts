@@ -34,6 +34,7 @@ test("Add two records and verify they were added", async ({page}) => {
     await webtablepage.addNewRecord(testData.firstNameTwo, testData.lastNameTwo, testData.emailTwo, testData.ageTwo, testData.salaryTwo, testData.departmentTwo)
     await webtablepage.verifyRecordWasAdded(testData.firstName)
     await webtablepage.verifyRecordWasAdded(testData.firstNameTwo)
+    console.log("Test Complete")
 });
 
 

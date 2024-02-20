@@ -6,15 +6,18 @@ test("Visit radio page from demoQA", async ({page}) => {
     await radioPage.visitRadioPage()
 });
 
-test("Click yes radio page from demoQA", async ({page}) => {
-    const radioPage = new RadioPage(page)
+test("Click yes radio page from demoQA", async ({context}) => {
+    const newPage = await context.newPage()
+    const radioPage = new RadioPage(newPage)
     await radioPage.visitRadioPage()
     await radioPage.clickYesRadioButton()
     await radioPage.verifySelectionIsYes()
 });
 
-test("Click impressive radio page from demoQA", async ({page}) => {
-    const radioPage = new RadioPage(page)
+// Testing context
+test("Click impressive radio page from demoQA", async ({context}) => {
+    const newPage = await context.newPage()
+    const radioPage = new RadioPage(newPage)
     await radioPage.visitRadioPage()
     await radioPage.clickImpressiveRadioButton()
 });
