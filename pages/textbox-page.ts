@@ -1,5 +1,5 @@
 import { expect, type Locator, type Page } from '@playwright/test';
-import { TextBoxLocators } from './locators/textbox-locators';
+import { TextBoxLocators } from '../locators/textbox-locators';
 
 export class TexBoxPage {
   // Define Selectors
