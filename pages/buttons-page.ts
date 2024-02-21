@@ -7,8 +7,6 @@ export class ButtonPage{
     readonly rightClickButton : Locator;
     readonly clickMeButton : Locator;
 
-
-
     constructor (page : Page){
         this.page = page;
         this.doubleClickButton = page.locator(ButtonsLocators.doubleClickButton)
