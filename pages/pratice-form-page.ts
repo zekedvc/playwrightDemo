@@ -31,15 +31,4 @@ export class PracticeFormPage{
       async typeFirstName(){
         await this.firstNameBox.fill("Test")    
       }
-
-
-
-
-
-
-
-
-
-
-
 }
